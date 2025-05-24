@@ -2,6 +2,7 @@
 
 <details>
     <summary>Phase - 1: Foundation (Docker)</summary>
+    
     requirements:
     - create a python flask application
     - containerize the flask application
