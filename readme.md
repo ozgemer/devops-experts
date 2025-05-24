@@ -9,7 +9,7 @@ requirements:
 - use docker volumes
 
 <details>
-    <summary>steps to solution:</summary>
+    <summary>steps to solution</summary>
     <ul>
         <li>create a simple flask app</li>
         <li>create an endpoint that can store data (to have a use for a volume)</li>
