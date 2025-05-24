@@ -1,18 +1,19 @@
 <h2>DevOps Engineer Project</h2>
 
-<details>
-    <summary>Phase - 1: Foundation (Docker)</summary>
-    
-    requirements:
-    - create a python flask application
-    - containerize the flask application
-    - post image to Docker Hub
-    - use docker volumes
+<h3>Phase - 1: Foundation (Docker)</h3>
+requirements:
+- create a python flask application
+- containerize the flask application
+- post image to Docker Hub
+- use docker volumes
 
-    steps to solution:
-    - create a simple flask app
-    - create an endpoint that can store data (to have a use for a volume)
-    - create a dockerfile to containerize flask app with a volume to store the data
-    - publish dockerfile to DockerHub
-    - publish code to gitHub
+<details>
+    <summary>steps to solution:</summary>
+    <ul>
+        <li>create a simple flask app</li>
+        <li>create an endpoint that can store data (to have a use for a volume)</li>
+        <li>create a dockerfile to containerize flask app with a volume to store the data</li>
+        <li>publish dockerfile to dockerhub</li>
+        <li>publish code to github</li>
+    </ul>
 </details>

@@ -9,14 +9,13 @@ def hello_world():
 
 @app.route('/login', methods=['GET', 'POST'])
 def render_login():
-    print('/login')
     if request.method == 'POST':
-        with open('login_log.txt', 'a') as f:
+        with open('data/login_log.txt', 'a') as f:
             user = request.form.get('name')
             current_datetime = datetime.now().isoformat()
             f.write(f'user {user} logged in @ {current_datetime}\n')
         Response({"user": user}, status=200)
-        
+
     return render_template('login.html')
 
 if __name__ == '__main__':
