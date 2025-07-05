@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cleanup-login-log
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: cleaner
+              image: busybox
+              command: ["/bin/sh", "-c", "rm -f /home/docker/login_log"]
+              volumeMounts:
+                - name: data-volume
+                  mountPath: /home/docker
+          restartPolicy: OnFailure
+          volumes:
+            - name: data-volume
+              persistentVolumeClaim:
+                claimName: devops-pvc

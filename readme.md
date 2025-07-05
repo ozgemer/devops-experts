@@ -6,7 +6,6 @@ This project is part of a DevOps course I’m taking at DevOps Experts, where I�
 
 <details>
 <summary><strong>Phase 1 — Foundation (Docker)</strong></summary>
-
 <br>
 
 This project demonstrates foundational Docker concepts by containerizing a simple Python Flask application.
@@ -55,8 +54,76 @@ docker compose up -d
 </details>
 
 
-#### Kubernetes Cluster Setup
+<details>
+<summary><strong>Phase 2: Orchestration (Kubernetes)</strong></summary>
+
+### Requirements
+
+✅ Set up a Kubernetes cluster  
+✅ Deploy your Dockerized web application as a Kubernetes Pod  
+✅ Create a Deployment and ReplicaSet for managing the application  
+✅ Expose the application  
+✅ Implement Horizontal Pod Autoscaling  
+✅ Use ConfigMaps  
+✅ Set up Kubernetes CronJobs  
+✅ Implement Liveness and Readiness Probes
+
+### Project Plan
+
+- Run the application as a pod
+- Create the yml files needed
+- Apply & connect to deployment
+- Set minikube to work
+
+#### Kubernetes Pod Setup
 
 ```bash
-kubectl run devopsexperts --image=ozgemer/devops-experts:latest
+kubectl run devops-experts --image=ozgemer/devops-experts:latest
 ```
+
+```bash
+kubectl get pods
+```
+
+#### Basic & Advanced Kubernetes Deployment Setup
+
+```bash
+kubectl apply -f config-map.yml
+```
+
+```bash
+kubectl apply -f nodeport.yml
+```
+
+```bash
+kubectl apply -f pv.yml
+```
+
+```bash
+kubectl apply -f pvc.yml
+```
+
+```bash
+kubectl apply -f hpa.yml
+```
+
+```bash
+kubectl apply -f cronjob.yml
+```
+
+```bash
+kubectl apply -f deployment.yml
+```
+
+#### Enable minikube service & metrics
+
+```bash
+minikube service devops-experts-service
+```
+go to localhost at the port minikube assigned
+
+```bash
+minikube addons enable metrics-server
+```
+
+</details>

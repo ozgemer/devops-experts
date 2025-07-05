@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-experts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-experts
+  template:
+    metadata:
+      labels:
+        app: devops-experts
+    spec:
+      containers:
+        - name: flask
+          image: ozgemer/devops-experts:latest
+          ports:
+            - containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 500m
+          envFrom:
+            - configMapRef:
+                name: flask-configmap
+          volumeMounts:
+            - name: data-volume
+              mountPath: /data
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: devops-pvc
