@@ -53,3 +53,10 @@ docker compose up -d
 - [http://localhost:5000/login](http://localhost:5000/login)
 
 </details>
+
+
+#### Kubernetes Cluster Setup
+
+```bash
+kubectl run devopsexperts --image=ozgemer/devops-experts:latest
+```

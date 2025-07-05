@@ -1,7 +1,8 @@
 FROM python:3.13-slim
 
 COPY webapp.py .
-COPY templates .
+COPY data .
+ADD templates /templates
 
 RUN pip install flask
 

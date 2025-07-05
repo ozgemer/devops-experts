@@ -1,6 +1,6 @@
 services:
   web:
-    image: ozgemer/devopsexperts-phase-1:latest
+    image: ozgemer/devops-experts:latest
     ports:
     - 5000:5000
     volumes:
