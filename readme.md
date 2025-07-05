@@ -1,20 +1,55 @@
-<h2>DevOps Engineer Project</h2>
+# DevOps Experts — DevOps Engineer Course Project
 
-<h3>Phase - 1: Foundation (Docker)</h3>
-
-requirements:
-- create a python flask application
-- containerize the flask application
-- post image to Docker Hub
-- use docker volumes
+## Introduction
+This project is part of a DevOps course I’m taking at DevOps Experts, where I’ve applied various DevOps tools and practices to automate and streamline software development. 
+<!-- The project utilizes tools such as Git, Jenkins, Docker, Terraform, and Kubernetes to build, test, and deploy applications in a CI/CD pipeline. -->
 
 <details>
-    <summary>steps to solution</summary>
-    <ul>
-        <li>create a simple flask app</li>
-        <li>create an endpoint that can store data (to have a use for a volume)</li>
-        <li>create a dockerfile to containerize flask app with a volume to store the data</li>
-        <li>publish dockerfile to dockerhub</li>
-        <li>publish code to github</li>
-    </ul>
+<summary><strong>Phase 1 — Foundation (Docker)</strong></summary>
+
+<br>
+
+This project demonstrates foundational Docker concepts by containerizing a simple Python Flask application.
+
+### Requirements
+
+✅ Create a Python Flask application  
+✅ Containerize the Flask application  
+✅ Push the image to Docker Hub  
+✅ Use Docker volumes
+
+### Project Plan
+
+- Develop a simple Flask app
+- Implement an endpoint to store data (to demonstrate Docker volumes)
+- Create a Dockerfile for containerization
+- Push the Docker image to Docker Hub
+- Publish project code to GitHub
+
+### Getting Started
+
+#### Clone the repository
+
+```bash
+git clone https://github.com/ozgemer/devops-experts.git
+cd devops-experts
+```
+
+#### Build the Docker image
+
+```bash
+docker build -t ozgemer/devops-experts:latest .
+```
+
+#### Run the application with Docker Compose
+
+```bash
+docker compose up -d
+```
+
+#### Open webapp
+
+- [http://localhost:5000](http://localhost:5000)
+- [http://localhost:5000/login](http://localhost:5000/login)
+
 </details>

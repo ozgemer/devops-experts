@@ -1,6 +1,8 @@
 FROM python:3.13-slim
 
-COPY . .
+COPY webapp.py .
+COPY templates .
+
 RUN pip install flask
 
 EXPOSE 5000
