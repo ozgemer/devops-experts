@@ -88,7 +88,7 @@ kubectl get pods
 #### Basic & Advanced Kubernetes Deployment Setup
 
 ```bash
-source run_deployment.sh
+source k8.sh
 ```
 
 #### Enable minikube service & metrics
@@ -105,20 +105,24 @@ minikube addons enable metrics-server
 #### PV & PVC connectivity
 
 ```bash
- kubectl get pods
+kubectl get pods
 ```
 once pod is running
 
 ```bash
- kubectl exec -it <pod_id> -- touch /data/textfile.txt
+kubectl exec -it <pod_id> -- touch /data/textfile.txt
 ```
 
 ```bash
- minikube ssh
+minikube ssh
 ```
 
 ```bash
-ls -l /data
+ls -l /data/devops-experts/flask-app/
 ```
 should show the file we just created at our minikube instance
+
+<br>
+<hr>
+<i>* I am having a weird app crash when doing a POST request through a pod (container works fine), I was unable to find the root cause</i>
 </details>
