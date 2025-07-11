@@ -96,7 +96,7 @@ source run_deployment.sh
 ```bash
 minikube service devops-experts-nodeport
 ```
-go to localhost at the port minikube assigned to open the flask app
+go to the address minikube assigned the nodeport
 
 ```bash
 minikube addons enable metrics-server
