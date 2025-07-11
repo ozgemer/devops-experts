@@ -40,8 +40,8 @@ spec:
             - configMapRef:
                 name: flask-configmap
           volumeMounts:
-            - name: data-volume
-              mountPath: /data
+            - mountPath: /data
+              name: data-volume
       volumes:
         - name: data-volume
           persistentVolumeClaim:

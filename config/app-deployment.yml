@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-experts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-experts
+  template:
+    metadata:
+      labels:
+        app: devops-experts
+    spec:
+      containers:
+        - name: flask
+          image: ozgemer/devops-experts:latest
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: data-volume
+              mountPath: /data
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: devops-pvc

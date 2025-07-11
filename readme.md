@@ -88,42 +88,37 @@ kubectl get pods
 #### Basic & Advanced Kubernetes Deployment Setup
 
 ```bash
-kubectl apply -f config-map.yml
-```
-
-```bash
-kubectl apply -f nodeport.yml
-```
-
-```bash
-kubectl apply -f pv.yml
-```
-
-```bash
-kubectl apply -f pvc.yml
-```
-
-```bash
-kubectl apply -f hpa.yml
-```
-
-```bash
-kubectl apply -f cronjob.yml
-```
-
-```bash
-kubectl apply -f deployment.yml
+source run_deployment.sh
 ```
 
 #### Enable minikube service & metrics
 
 ```bash
-minikube service devops-experts-service
+minikube service devops-experts-nodeport
 ```
-go to localhost at the port minikube assigned
+go to localhost at the port minikube assigned to open the flask app
 
 ```bash
 minikube addons enable metrics-server
 ```
 
+#### PV & PVC connectivity
+
+```bash
+ kubectl get pods
+```
+once pod is running
+
+```bash
+ kubectl exec -it <pod_id> -- touch /data/textfile.txt
+```
+
+```bash
+ minikube ssh
+```
+
+```bash
+ls -l /data
+```
+should show the file we just created at our minikube instance
 </details>

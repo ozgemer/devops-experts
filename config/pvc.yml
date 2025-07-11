@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: devops-pvc
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
