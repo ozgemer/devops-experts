@@ -3,10 +3,10 @@ kind: PersistentVolume
 metadata:
   name: devops-pv
 spec:
+  storageClassName: manual
   capacity:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /home/docker       # on minikube
-    type: DirectoryOrCreate
+    path: /data

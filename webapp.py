@@ -9,13 +9,18 @@ def hello_world():
 
 @app.route('/login', methods=['GET', 'POST'])
 def render_login():
-    if request.method == 'POST':
-        with open('data/login_log.txt', 'a') as f:
-            user = request.form.get('name')
-            current_datetime = datetime.now().isoformat()
-            f.write(f'user {user} logged in @ {current_datetime}\n')
-        Response({"user": user}, status=200)
-
+    try:
+        if request.method == 'POST':
+            with open('/data/login_log.txt', 'a') as f:
+                user = request.form.get('name')
+                current_datetime = datetime.now().isoformat()
+                f.write(f'user {user} logged in @ {current_datetime}\n')
+            Response({"user": user}, status=200)
+    except Exception as e:
+        app.logger.error(f"Failed to write login: {e}")
+        Response(status=500)
+        return 'Internal Server Error', 500
+    
     return render_template('login.html')
 
 if __name__ == '__main__':
